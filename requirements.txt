@@ -1,0 +1,11 @@
+pydantic~=2.10.6
+fastapi~=0.115.8
+aiohttp~=3.11.12
+apscheduler~=3.11.0
+python-dotenv~=1.0.1
+coloredlogs~=15.0.1
+requests~=2.32.3
+uvicorn~=0.34.0
+apscheduler~=3.11.0
+gunicorn~=23.0.0
+aiolimiter~=1.2.1
