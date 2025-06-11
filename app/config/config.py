@@ -9,6 +9,7 @@ DEFAULTS = {
     "CAR_PARK_API": "",
     "NSW_TRANSPORT_URL":"",
     "HISTORICAL_MARKER": "historical only",
+    "JWT_SECRET_KEY":"default_secret_key",
 
 }
 
@@ -27,6 +28,6 @@ class Config:
         }
         self.historical_marker = get_env_variable("HISTORICAL_MARKER")
         self.nsw_transport_url = get_env_variable("NSW_TRANSPORT_URL")
-
+        self.jwt_secret_key = get_env_variable("JWT_SECRET_KEY")
 
 config = Config()

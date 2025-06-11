@@ -7,7 +7,7 @@ services:
       context: ../../
       dockerfile: deploy/prod/Dockerfile
     ports:
-      - "8005:8000"
+      - "8000:8000"
     networks:
       - car-park-network
     restart: unless-stopped

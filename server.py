@@ -2,12 +2,13 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.utils import get_openapi
+
 from app.api.router_factory import api_router
 from app import logger
 import uvicorn
 
 from app.core.cache import set_car_park, set_scheduler, get_scheduler, get_car_park
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,10 +24,6 @@ async def lifespan(app: FastAPI):
     yield
     scheduler.scheduler.shutdown()
     logger.info("Car Park API shutdown complete.")
-
-
-
-
 
 app = FastAPI(
     title="Car Park API",
