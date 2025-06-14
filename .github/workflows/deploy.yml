@@ -3,7 +3,7 @@ name: Deploy on test success
 on:
   workflow_run:
     workflows:
-      - “nsw transport backend deploy” 
+      - "nsw transport backend deploy"
     types:
       - completed
 
@@ -14,12 +14,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Deploy on EC2
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.EC2_SSH_HOST }}
+          host:     ${{ secrets.EC2_SSH_HOST }}
           username: ${{ secrets.EC2_SSH_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key:      ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ec2-user/nsw-carpark-finder/deploy/prod
             git pull origin main
