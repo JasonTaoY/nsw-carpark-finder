@@ -19,6 +19,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Copy prod env into .env
+      run: |
+        if [ -f .env.prod ]; then
+          cp .env.prod .env
+        else
+          echo "⚠️ .env.prod not found, skipping"
+        fi
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
