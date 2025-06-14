@@ -1,6 +1,7 @@
 pydantic~=2.10.6
 fastapi~=0.115.8
 aiohttp~=3.11.12
+httpx~=0.28.1
 apscheduler~=3.11.0
 python-dotenv~=1.0.1
 coloredlogs~=15.0.1
